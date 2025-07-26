@@ -102,7 +102,6 @@
         <option value="5">5</option>
       </select>
 
-      <button onclick="submitForm()">Submit</button>
       <button type="submit">Submit</button>
       <p id="result"></p>
     </div>
@@ -140,6 +139,19 @@
         }).getPostersList();
       }
 
+      function loadJudgeNames() {
+        google.script.run.withSuccessHandler(function(judges) {
+          const judgeSelect = document.getElementById("judgeName");
+
+          judges.forEach(judge => {
+            const option = document.createElement("option");
+            option.text = judge;
+            option.value = judge;
+            judgeSelect.appendChild(option);
+          });
+        }).getJudgesList();
+      }
+
       function displayPosterDetails() {
         const selectedTitle = document.getElementById("posterTitle").value;
         const poster = posterMap[selectedTitle];
@@ -161,17 +173,6 @@
             .then(r => r.text()).then(msg => alert(msg));
         });
 
-      function loadJudgeNames() {
-        google.script.run.withSuccessHandler(function(judges) {
-          const judgeSelect = document.getElementById("judgeName");
-          judges.forEach(function(name) {
-            const option = document.createElement("option");
-            option.text = name;
-            option.value = name;
-            judgeSelect.appendChild(option);
-          });
-        }).getJudgesList();
-      }
 
       window.onload = function () {
         loadJudgeNames();
