@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
+const PORT = process.env.REACT_APP_PORT || 8000;
+const BASE_URL = process.env.REACT_APP_FASTAPI_BASE_URL || "http://localhost"
+
 const PosterList = () => {
     const [posters, setPosters] = useState([]);
     const [collapsedSessions, setCollapsedSessions] = useState({
@@ -13,7 +16,7 @@ const PosterList = () => {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/posters')
+        axios.get(`${BASE_URL}:${PORT}/api/posters`)
             .then(response => {
                 setPosters(response.data);
             })

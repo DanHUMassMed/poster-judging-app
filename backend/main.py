@@ -1,9 +1,15 @@
 # backend/main.py
-
+import os
 import logging
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+
+
+load_dotenv() 
+react_app_url = os.getenv("REACT_APP_URL", "http://localhost:3000")
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -14,7 +20,7 @@ app = FastAPI()
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allows frontend to connect
+    allow_origins=[f"{react_app_url}"],  # Allows frontend to connect
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
