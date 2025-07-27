@@ -5,6 +5,9 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+import uuid
+import glob
+from pydantic import BaseModel
 
 
 load_dotenv() 
@@ -56,7 +59,6 @@ def get_judges():
         logger.error(f"An error occurred while reading judges: {e}")
         raise HTTPException(status_code=500, detail="Internal server error.")
 
-from pydantic import BaseModel
 
 class Score(BaseModel):
     Judge: str
@@ -70,13 +72,16 @@ class Score(BaseModel):
 
 @app.post("/wormcat3/api/scores")
 def post_score(score: Score):
-    """Saves a new score to the CSV file."""
+    """Saves a new score to a uniquely named CSV file."""
     try:
-        logger.info(f"Received score from {score.Judge} for {score.Poster_Title}")
         total_score = score.Scientific_Clarity + score.Data_Presentation + score.Visual_Design + score.Impact + score.Tiebreaker
-        
-        file_path = "../data/scores.csv"
-        
+
+        # Generate a unique identifier for the filename
+        unique_id = uuid.uuid4()
+        file_name = f"score_{unique_id}.csv"
+        file_path = os.path.join("../data/scores", file_name)
+
+        # Create a DataFrame for the new score
         new_score = pd.DataFrame([{
             "Timestamp": pd.Timestamp.now(),
             "Judge": score.Judge,
@@ -90,32 +95,56 @@ def post_score(score: Score):
             "Comment": score.Comment
         }])
 
-        # Check if the file exists to determine if we need to write the header
-        try:
-            pd.read_csv(file_path)
-            write_header = False
-        except FileNotFoundError:
-            write_header = True
+        # Save the new score to a new CSV file. 
+        # The header is automatically included, and 'index=False' prevents writing the DataFrame index.
+        new_score.to_csv(file_path, index=False)
 
-        new_score.to_csv(file_path, mode='a', header=write_header, index=False)
-        
-        return {"message": "Score submitted successfully!"}
+        return {"message": "Score submitted successfully!", "filename": file_name}
     except Exception as e:
         logger.error(f"An error occurred while saving the score: {e}")
         raise HTTPException(status_code=500, detail="Internal server error.")
+    
 
 @app.get("/wormcat3/api/scores")
 def get_scores():
-    """Returns a list of all scores from the CSV file."""
+    """
+    Reads all individual score_*.csv files from a directory, concatenates them,
+    saves the result to a master scores.csv file, and returns all scores.
+    """
     try:
-        logger.info("Reading scores from data/scores.csv")
-        scores_df = pd.read_csv("../data/scores.csv")
-        # Replace NaN with None for JSON compatibility
+        # Define the directory containing individual score files and the output file path
+        source_dir = "../data/scores"
+        output_file_path = "../data/scores.csv"
+
+        # Create the glob search pattern to find all score files
+        search_pattern = os.path.join(source_dir, "score_*.csv")
+        score_files = glob.glob(search_pattern)
+
+        logger.info(f"Found {len(score_files)} score files to process in {source_dir}.")
+
+        # If no score files are found, return an empty list.
+        if not score_files:
+            logger.warning(f"No score files found in {source_dir}. Returning empty list.")
+            # Also, attempt to remove the consolidated file if it exists but there are no source files
+            if os.path.exists(output_file_path):
+                os.remove(output_file_path)
+            return []
+
+        # Read all found CSV files into a list of DataFrames
+        df_list = [pd.read_csv(file, dtype={'Timestamp': str}) for file in score_files]
+
+        # Concatenate all DataFrames into a single DataFrame
+        scores_df = pd.concat(df_list, ignore_index=True)
+
+        # Save the consolidated DataFrame to the main scores.csv file, overwriting it
+        scores_df.to_csv(output_file_path, index=False)
+        logger.info(f"Successfully consolidated scores into {output_file_path}")
+
+        # Replace NaN with None for JSON compatibility before returning
         scores_df = scores_df.where(pd.notnull(scores_df), None)
+        
         return scores_df.to_dict(orient="records")
-    except FileNotFoundError:
-        logger.error("data/scores.csv not found")
-        return [] # Return empty list if no scores yet
+
     except Exception as e:
-        logger.error(f"An error occurred while reading scores: {e}")
+        logger.error(f"An error occurred while reading and consolidating scores: {e}")
         raise HTTPException(status_code=500, detail="Internal server error.")
