@@ -26,7 +26,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/api/posters")
+@app.get("/wormcat3/api/posters")
 def get_posters():
     """Returns a list of poster details from the CSV file."""
     try:
@@ -42,7 +42,7 @@ def get_posters():
         logger.error(f"An error occurred while reading poster details: {e}")
         raise HTTPException(status_code=500, detail="Internal server error.")
 
-@app.get("/api/judges")
+@app.get("/wormcat3/api/judges")
 def get_judges():
     """Returns a list of judges from the CSV file."""
     try:
@@ -68,7 +68,7 @@ class Score(BaseModel):
     Tiebreaker: int
     Comment: str
 
-@app.post("/api/scores")
+@app.post("/wormcat3/api/scores")
 def post_score(score: Score):
     """Saves a new score to the CSV file."""
     try:
@@ -104,7 +104,7 @@ def post_score(score: Score):
         logger.error(f"An error occurred while saving the score: {e}")
         raise HTTPException(status_code=500, detail="Internal server error.")
 
-@app.get("/api/scores")
+@app.get("/wormcat3/api/scores")
 def get_scores():
     """Returns a list of all scores from the CSV file."""
     try:

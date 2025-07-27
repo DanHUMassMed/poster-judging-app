@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-const PORT = process.env.REACT_APP_PORT || 8000;
-const BASE_URL = process.env.REACT_APP_FASTAPI_BASE_URL || "http://localhost"
+const BASE_URL = process.env.REACT_APP_FASTAPI_BASE_URL || "http://localhost:8000/wormcat3";
 
 const ratingOptions = [
   { value: 1, label: '1 – Beginner\'s Glimpse' },
@@ -45,8 +44,8 @@ const JudgingForm = () => {
       try {
         setLoading(true);
         const [judgesResponse, postersResponse] = await Promise.all([
-          axios.get(`${BASE_URL}:${PORT}/api/judges`),
-          axios.get(`${BASE_URL}:${PORT}/api/posters`)
+          axios.get(`${BASE_URL}/api/judges`),
+          axios.get(`${BASE_URL}/api/posters`)
         ]);
         
         setJudges(judgesResponse.data);
@@ -113,7 +112,7 @@ const JudgingForm = () => {
       setSubmitting(true);
       setErrors({});
       
-      await axios.post(`${BASE_URL}:${PORT}/api/scores`, formData);
+      await axios.post(`${BASE_URL}/api/scores`, formData);
       
       alert('Score submitted successfully!');
       

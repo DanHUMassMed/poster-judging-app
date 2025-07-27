@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const PORT = process.env.REACT_APP_PORT || 8000;
-const BASE_URL = process.env.REACT_APP_FASTAPI_BASE_URL || "http://localhost"
+
+const BASE_URL = process.env.REACT_APP_FASTAPI_BASE_URL || "http://localhost:8000/wormcat3";
 
 const Results = () => {
     const [password, setPassword] = useState('');
@@ -26,7 +26,7 @@ const Results = () => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            axios.get(`${BASE_URL}:${PORT}/api/scores`)
+            axios.get(`${BASE_URL}/api/scores`)
                 .then(response => setScores(response.data))
                 .catch(error => console.error('Error fetching scores:', error));
         }
