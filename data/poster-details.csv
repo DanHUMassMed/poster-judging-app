@@ -1,40 +1,40 @@
-﻿Poster_Id,Date,Session,Name,Affiliation,Poster_Title,Position
-1,07/28/25,Monday,"Adebayo, Daniel",Wayne State University,Mdm1 Coordinates Sphingolipid Metabolism and Nutrient Transport to Regulate Longevity,GS
-2,07/28/25,Monday,"Bostrom, Emily",Rutgers University,Nem1 HAD-like active site motifs are essential for its protein phosphatase activity on PA phosphatase Pah1,GS
-3,07/28/25,Monday,"Chadwick, Stormi","University of California, San Diego",Probing the role of DAG in cell membranes and disease,GS
-4,07/28/25,Monday,"Demmitt-Rice, Courtney",University of Utah,Aberrant Cholesterol Trafficking in X-linked Adrenoleukodystrophy,GS
-5,07/28/25,Monday,"Fantini, Francesca",University of California Berkeley,Modulation of mitochondrial dynamism in Kupffer Cells impacts systemic metabolism,GS
-6,07/28/25,Monday,"Anderson, Ruthellen",University of Iowa,Inquiry into the pathophysiology and clinical significance of hypocholesterolemia and altered lipid metabolism in neonatal sepsis,PD
-7,07/28/25,Monday,"Baird, Michelle",National Institutes of Health,Lamin B Receptor Upregulation in Metastatic Melanoma Causes Cholesterol-Mediated Nuclear Envelope Fragility,PD
-8,07/28/25,Monday,"Barger, Sarah",Yale University,Mechanisms limiting nuclear surface assembly during mitotic exit are differentially required for human cancers,PD
-9,07/28/25,Monday,"Czerniak, Tomasz",Karolinska Institutet,Towards a molecular understanding of RNA–Lipid interactions in biological systems,PD
-10,07/28/25,Monday,"Denley, Matthew",National Institutes of Health,Lipid regulation of the nociceptive ion channel TRPM3,PD
-11,07/28/25,Monday,"Dey, Swagata",Icahn School of Medicine at Mount Sinai,Understanding the mechano-electrical coupling of microglial membranes in response to amyloid-beta challenge,PD
-12,07/29/25,Tuesday,"Ghalayini, Sarah",MD Anderson Cancer Center,Armoring T Cell Membranes to Potentiate Anti-Tumor Activity,GS
-13,07/29/25,Tuesday,"Griffith, Alec",Oregon Health and Science University,Sphingolipids needed for rapid recruitment of membrane repair machinery,GS
-14,07/29/25,Tuesday,"Hu, Hao","Wolfson Institute for Biomedical Research, UCL",The Hidden Role of Brain Bile Acids: Microglia Drive Neurodevelopment via Cyp27a1,GS
-15,07/29/25,Tuesday,"Kumar, Vikalp",Wayne State University,Cardiolipin regulates retinoic acid metabolism and signaling - Implications for Barth syndrome,GS
-16,07/29/25,Tuesday,"Lenis, Margie",Rutgers University,The Role of Fatty Acid Binding Protein 1 (FABP1) in Enteroendocrine Cell Function and Lipid-Mediated Metabolic Regulation,GS
-17,07/29/25,Tuesday,"Ramim, Abu",Wayne State University,Perturbation of amino acid metabolism in tafazzin- deficient cells,GS
-18,07/29/25,Tuesday,"Hubler, Zita",Washington University in St. Louis,Antisense oligonucleotide (ASO) therapeutics for Mitchell Syndrome,PD
-19,07/30/25,Wednesday,"Lynch, Katie",Icahn School of Medicine at Mount Sinai,Molecular Underpinnings of Cannabidiol’s Anti-Anxiety Effects,GS
-20,07/30/25,Wednesday,"Madsen, Maria Lillevang",Technical University of Denmark,Small-molecule tools decipher the role of sterol transport proteins in lipid homeostasis,GS
-21,07/30/25,Wednesday,"Markham, Briana",Vanderbilt University,Regulation of Golgi phosphoinositides and protein trafficking by the lipid flippase Neo1,GS
-22,07/30/25,Wednesday,"Marr, Douglas",Stony Brook University,Arl Aboard PLD1: Elucidating the Mechanism of Phospholipase D1 Activation by the Small GTPase Arl11,GS
-23,07/30/25,Wednesday,"Nguyen, Ha Ngoc Anh",Technische Universitat Dresden,Exploring the evolution of lipid ordering with tunable living membrane,GS
-24,07/30/25,Wednesday,"Obaseki, Eseiwi",Wayne State University,"ER-vacuole/lysosome tether, Mdm1 is required for efficient autophagy",GS
-25,07/30/25,Wednesday,"Ralph-Epps, Tyler",Wayne State University,TAFAZZIN-deficiency alters fatty acid oxidation,GS
-26,07/30/25,Wednesday,"Lipp, Nicolas-Frédéric","University of California, San Diego",A conserved beta hairpin acts as a hydrophobic valve in Osh6-mediated PS/PI(4)P exchange.,PD
-27,07/30/25,Wednesday,"Ma, Cheng-I Jonathan",Weill Cornell Medicine,Loss of STARD4 delays foam cell formation by reducing free cholesterol influx during digestive exophagy of aggregated LDL,PD
-28,07/30/25,Wednesday,"Cook, Katelyn",Max Planck Institute for Cell Biology and Genetics,A cross-scale map of membrane lipid-protein interactions in subcellular space,PD
-29,07/30/25,Wednesday,"Mesa Galloso, Haydee",University of Calgary,Antagonistic effects of sterols and diacylglycerol on the conformational activation of the yeast membrane sensor Mga2 by a lysophosphatidylcholine,PD
-30,07/30/25,Wednesday,"Mushtaq, Arjamand",UMass Chan Medical School,"Tissue-specific responses to low PC allow an ARF GTPase ""swap"" as membrane properties change",PD
-31,07/31/25,Thursday,"Teele, Kaela",Stony Brook University,Regulation of plasma membrane lipid asymmetry in Candida albicans,GS
-32,07/31/25,Thursday,"Venkatraman, Kailash","University of California, San Diego",Sterol composition regulates mitochondrial fission fate through dynamic control of membrane integrity,GS
-33,07/31/25,Thursday,"Wang, Yuan",Life Sciences Institute Zhejiang University,Temporal oscillation of phospholipids during cell division,GS
-34,07/31/25,Thursday,"Welcome, Franceine",Stony Brook University,Structural insight into substrate specificity and catalysis of lipin/Pah phosphatidic acid phosphatases,GS
-35,07/31/25,Thursday,"Wu, Lingshuang",Stony Brook University,A spastic paraplegia-related DDHD2 functions as a lipase and transacylase that can remodel the acyl- chains of triglycerides,GS
-36,07/31/25,Thursday,"Xue, Jingyuan",Zhejiang University,Phospholipid biosynthesis modulates nucleotide metabolism and reductive capacity,GS
-37,07/31/25,Thursday,"Sosa Ponce, Maria Laura",University of Victoria,The nuclear envelope proteins Esc1 and Mps3 differentially impact sterol gradients in budding yeast,PD
-38,07/31/25,Thursday,"Kloock, Anke",Grossman School of Medicine,Intestinal RICT-1 regulates the larval germline progenitor pool via the vitellogenins VIT-1 and VIT-3 in C. elegans,PD
-39,07/31/25,Thursday,"Schmieder, Stefanie",Boston Children's Hospital,A functionalized GM1 structural library reveals distinct membrane organization,PD
+﻿Poster_Id,Poster_Board,Date,Session,Name,Affiliation,Poster_Title,Position
+1,1,7/28/25,Monday,"Adebayo, Daniel",Wayne State University,Mdm1 Coordinates Sphingolipid Metabolism and Nutrient Transport to Regulate Longevity,GS
+2,7,7/28/25,Monday,"Bostrom, Emily",Rutgers University,Nem1 HAD-like active site motifs are essential for its protein phosphatase activity on PA phosphatase Pah1,GS
+3,9,7/28/25,Monday,"Chadwick, Stormi","University of California, San Diego",Probing the role of DAG in cell membranes and disease,GS
+4,11,7/28/25,Monday,"Demmitt-Rice, Courtney",University of Utah,Aberrant Cholesterol Trafficking in X-linked Adrenoleukodystrophy,GS
+5,15,7/28/25,Monday,"Fantini, Francesca",University of California Berkeley,Modulation of mitochondrial dynamism in Kupffer Cells impacts systemic metabolism,GS
+6,2,7/28/25,Monday,"Anderson, Ruthellen",University of Iowa,Inquiry into the pathophysiology and clinical significance of hypocholesterolemia and altered lipid metabolism in neonatal sepsis,PD
+7,3,7/28/25,Monday,"Baird, Michelle",National Institutes of Health,Lamin B Receptor Upregulation in Metastatic Melanoma Causes Cholesterol-Mediated Nuclear Envelope Fragility,PD
+8,5,7/28/25,Monday,"Barger, Sarah",Yale University,Mechanisms limiting nuclear surface assembly during mitotic exit are differentially required for human cancers,PD
+9,10,7/28/25,Monday,"Czerniak, Tomasz",Karolinska Institutet,Towards a molecular understanding of RNA–Lipid interactions in biological systems,PD
+10,12,7/28/25,Monday,"Denley, Matthew",National Institutes of Health,Lipid regulation of the nociceptive ion channel TRPM3,PD
+11,13,7/28/25,Monday,"Dey, Swagata",Icahn School of Medicine at Mount Sinai,Understanding the mechano-electrical coupling of microglial membranes in response to amyloid-beta challenge,PD
+12,3,7/29/25,Tuesday,"Ghalayini, Sarah",MD Anderson Cancer Center,Armoring T Cell Membranes to Potentiate Anti-Tumor Activity,GS
+13,4,7/29/25,Tuesday,"Griffith, Alec",Oregon Health and Science University,Sphingolipids needed for rapid recruitment of membrane repair machinery,GS
+14,5,7/29/25,Tuesday,"Hu, Hao","Wolfson Institute for Biomedical Research, UCL",The Hidden Role of Brain Bile Acids: Microglia Drive Neurodevelopment via Cyp27a1,GS
+15,13,7/29/25,Tuesday,"Kumar, Vikalp",Wayne State University,Cardiolipin regulates retinoic acid metabolism and signaling - Implications for Barth syndrome,GS
+16,14,7/29/25,Tuesday,"Lenis, Margie",Rutgers University,The Role of Fatty Acid Binding Protein 1 (FABP1) in Enteroendocrine Cell Function and Lipid-Mediated Metabolic Regulation,GS
+17,15,7/29/25,Tuesday,"Ramim, Abu",Wayne State University,Perturbation of amino acid metabolism in tafazzin- deficient cells,GS
+18,6,7/29/25,Tuesday,"Hubler, Zita",Washington University in St. Louis,Antisense oligonucleotide (ASO) therapeutics for Mitchell Syndrome,PD
+19,4,7/30/25,Wednesday,"Lynch, Katie",Icahn School of Medicine at Mount Sinai,Molecular Underpinnings of Cannabidiol’s Anti-Anxiety Effects,GS
+20,6,7/30/25,Wednesday,"Madsen, Maria Lillevang",Technical University of Denmark,Small-molecule tools decipher the role of sterol transport proteins in lipid homeostasis,GS
+21,7,7/30/25,Wednesday,"Markham, Briana",Vanderbilt University,Regulation of Golgi phosphoinositides and protein trafficking by the lipid flippase Neo1,GS
+22,8,7/30/25,Wednesday,"Marr, Douglas",Stony Brook University,Arl Aboard PLD1: Elucidating the Mechanism of Phospholipase D1 Activation by the Small GTPase Arl11,GS
+23,13,7/30/25,Wednesday,"Nguyen, Ha Ngoc Anh",Technische Universitat Dresden,Exploring the evolution of lipid ordering with tunable living membrane,GS
+24,14,7/30/25,Wednesday,"Obaseki, Eseiwi",Wayne State University,"ER-vacuole/lysosome tether, Mdm1 is required for efficient autophagy",GS
+25,15,7/30/25,Wednesday,"Ralph-Epps, Tyler",Wayne State University,TAFAZZIN-deficiency alters fatty acid oxidation,GS
+26,3,7/30/25,Wednesday,"Lipp, Nicolas-Frédéric","University of California, San Diego",A conserved beta hairpin acts as a hydrophobic valve in Osh6-mediated PS/PI(4)P exchange.,PD
+27,5,7/30/25,Wednesday,"Ma, Cheng-I Jonathan",Weill Cornell Medicine,Loss of STARD4 delays foam cell formation by reducing free cholesterol influx during digestive exophagy of aggregated LDL,PD
+28,9,7/30/25,Wednesday,"Cook, Katelyn",Max Planck Institute for Cell Biology and Genetics,A cross-scale map of membrane lipid-protein interactions in subcellular space,PD
+29,10,7/30/25,Wednesday,"Mesa Galloso, Haydee",University of Calgary,Antagonistic effects of sterols and diacylglycerol on the conformational activation of the yeast membrane sensor Mga2 by a lysophosphatidylcholine,PD
+30,12,7/30/25,Wednesday,"Mushtaq, Arjamand",UMass Chan Medical School,"Tissue-specific responses to low PC allow an ARF GTPase ""swap"" as membrane properties change",PD
+31,5,7/31/25,Thursday,"Teele, Kaela",Stony Brook University,Regulation of plasma membrane lipid asymmetry in Candida albicans,GS
+32,7,7/31/25,Thursday,"Venkatraman, Kailash","University of California, San Diego",Sterol composition regulates mitochondrial fission fate through dynamic control of membrane integrity,GS
+33,9,7/31/25,Thursday,"Wang, Yuan",Life Sciences Institute Zhejiang University,Temporal oscillation of phospholipids during cell division,GS
+34,12,7/31/25,Thursday,"Welcome, Franceine",Stony Brook University,Structural insight into substrate specificity and catalysis of lipin/Pah phosphatidic acid phosphatases,GS
+35,13,7/31/25,Thursday,"Wu, Lingshuang",Stony Brook University,A spastic paraplegia-related DDHD2 functions as a lipase and transacylase that can remodel the acyl- chains of triglycerides,GS
+36,14,7/31/25,Thursday,"Xue, Jingyuan",Zhejiang University,Phospholipid biosynthesis modulates nucleotide metabolism and reductive capacity,GS
+37,3,7/31/25,Thursday,"Sosa Ponce, Maria Laura",University of Victoria,The nuclear envelope proteins Esc1 and Mps3 differentially impact sterol gradients in budding yeast,PD
+38,4,7/31/25,Thursday,"Kloock, Anke",Grossman School of Medicine,Intestinal RICT-1 regulates the larval germline progenitor pool via the vitellogenins VIT-1 and VIT-3 in C. elegans,PD
+39,15,7/31/25,Thursday,"Schmieder, Stefanie",Boston Children's Hospital,A functionalized GM1 structural library reveals distinct membrane organization,PD

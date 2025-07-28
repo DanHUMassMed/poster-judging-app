@@ -111,7 +111,7 @@ const PosterList = () => {
                                         )}
                                     </div>
                                 </div>
-                                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                                <div className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs font-medium">
                                     {posterCount} poster{posterCount !== 1 ? 's' : ''}
                                 </div>
                             </div>
@@ -132,6 +132,9 @@ const PosterList = () => {
                                                     </h3>
                                                     
                                                     <div className="space-y-2 text-sm">
+                                                        <p className="text-gray-700">
+                                                            <span className="font-medium">Poster #:</span> {poster.Poster_Board}
+                                                        </p>
                                                         <p className="text-gray-700">
                                                             <span className="font-medium">Author:</span> {poster.Name}
                                                         </p>
