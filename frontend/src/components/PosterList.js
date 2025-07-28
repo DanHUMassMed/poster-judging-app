@@ -5,14 +5,40 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 
 const BASE_URL = process.env.REACT_APP_FASTAPI_BASE_URL || "http://localhost:8000/wormcat3";
 
+// Key for localStorage
+const COLLAPSED_SESSIONS_KEY = 'posterList_collapsedSessions';
+
 const PosterList = () => {
     const [posters, setPosters] = useState([]);
-    const [collapsedSessions, setCollapsedSessions] = useState({
-        Monday: true,
-        Tuesday: true,
-        Wednesday: true,
-        Thursday: true
+    
+    // Initialize collapsed sessions from localStorage or default values
+    const [collapsedSessions, setCollapsedSessions] = useState(() => {
+        try {
+            const saved = localStorage.getItem(COLLAPSED_SESSIONS_KEY);
+            if (saved) {
+                return JSON.parse(saved);
+            }
+        } catch (error) {
+            console.warn('Error loading collapsed sessions from localStorage:', error);
+        }
+        
+        // Default state if nothing in localStorage or error occurred
+        return {
+            Monday: true,
+            Tuesday: true,
+            Wednesday: true,
+            Thursday: true
+        };
     });
+
+    // Save collapsed sessions to localStorage whenever it changes
+    useEffect(() => {
+        try {
+            localStorage.setItem(COLLAPSED_SESSIONS_KEY, JSON.stringify(collapsedSessions));
+        } catch (error) {
+            console.warn('Error saving collapsed sessions to localStorage:', error);
+        }
+    }, [collapsedSessions]);
 
     useEffect(() => {
         axios.get(`${BASE_URL}/api/posters`)
@@ -136,8 +162,6 @@ const PosterList = () => {
                     );
                 })}
             </div>
-
-
         </div>
     );
 };
