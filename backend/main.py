@@ -142,7 +142,7 @@ def get_scores():
 
         # Replace NaN with None for JSON compatibility before returning
         scores_df = scores_df.where(pd.notnull(scores_df), None)
-        
+        scores_df = scores_df.sort_values(by=['Timestamp', 'Poster_Title']).reset_index(drop=True)
         return scores_df.to_dict(orient="records")
 
     except Exception as e:

@@ -9,3 +9,4 @@ node_modules/
 build/
 .DS_Store
 *score_*.csv
+*scores.csv
