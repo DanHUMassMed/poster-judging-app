@@ -19,6 +19,45 @@ const criteriaLabels = {
   Tiebreaker: 'Tiebreaker'
 };
 
+const criteriaDescriptions = {
+  Scientific_Clarity: 'Was the scientific question clear and was the methodology appropriate and rigorous?',
+  Data_Presentation: 'Were the results clearly presented and convincingly interpreted?',
+  Visual_Design: 'Was the poster visually clear, well-organized, and easy to follow?',
+  Impact: 'Did the poster present novel insights or potential impact for the field?',
+  Tiebreaker: 'Was there something special about the poster/presenter we could consider in case of a tie?'
+};
+
+// Info Popup Component
+const InfoPopup = ({ description }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <div className="relative inline-block ml-2">
+      <button
+        type="button"
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+        onClick={() => setIsVisible(!isVisible)}
+        className="w-4 h-4 bg-blue-500 text-white rounded-full text-xs flex items-center justify-center hover:bg-blue-600 transition-colors cursor-help"
+        aria-label="More information"
+      >
+        ?
+      </button>
+      
+      {isVisible && (
+        <div className="absolute z-10 w-64 p-3 mt-1 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-lg -left-32 transform">
+          <div className="relative">
+            {description}
+            {/* Arrow pointing up */}
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-gray-300"></div>
+            <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-white"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Toast Notification Component
 const Toast = ({ message, type = 'success', onClose }) => {
   useEffect(() => {
@@ -69,7 +108,7 @@ const JudgingForm = () => {
   const [toast, setToast] = useState(null);
   const [showSuccess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
-    Judge: 'Anonymous',
+    Judge: '',
     Poster_Title: posterId || '',
     Scientific_Clarity: '',
     Data_Presentation: '',
@@ -80,7 +119,7 @@ const JudgingForm = () => {
   });
 
   const initialFormData = {
-    Judge: 'Anonymous',
+    Judge: '',
     Poster_Title: '',
     Scientific_Clarity: '',
     Data_Presentation: '',
@@ -274,7 +313,7 @@ const JudgingForm = () => {
       
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Poster Judging</h1>
-        <p className="text-gray-600">Evaluate the poster using the criteria below. All fields marked with * are required.</p>
+        <p className="text-gray-600">Evaluate the poster using the criteria below.</p>
       </div>
       
       <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
@@ -292,6 +331,7 @@ const JudgingForm = () => {
                 errors.Judge ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
               }`}
             >
+              <option value="">Select a Judge</option>
               <option value="Anonymous">Anonymous</option>
               {judges.map(judge => (
                 <option key={judge} value={judge}>{judge}</option>
@@ -331,8 +371,9 @@ const JudgingForm = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {Object.entries(criteriaLabels).map(([key, label]) => (
               <div key={key} className="space-y-2">
-                <label className="block text-gray-700 font-semibold">
-                  {label} <span className="text-red-500">*</span>
+                <label className="block text-gray-700 font-semibold flex items-center">
+                  {label} <span className="text-red-500 ml-1">*</span>
+                  <InfoPopup description={criteriaDescriptions[key]} />
                 </label>
                 <select 
                   name={key} 
