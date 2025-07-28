@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router future={{ v7_startTransition: true }}>
-      <div className="App bg-gray-100 min-h-screen">
+      <div className="App bg-gray-100 min-h-screen flex flex-col">
         <nav className="bg-white p-4 shadow-md">
           <div className="flex items-center justify-between">
             {/* Logo and Title */}
@@ -51,7 +51,7 @@ function App() {
               <li>
                 <Link to="/" className="text-blue-500 hover:underline font-medium">
                   Poster List
-                </Link>
+                </Link>        
               </li>
               <li>
                 <Link to="/judging" className="text-blue-500 hover:underline font-medium">
@@ -100,7 +100,7 @@ function App() {
           </div>
         </nav>
 
-        <main className="p-4">
+        <main className="p-4 flex-grow">
           <Routes>
             <Route path="/" element={<PosterList />} />
             <Route path="/judging/:posterId" element={<JudgingForm />} />
@@ -108,6 +108,12 @@ function App() {
             <Route path="/results" element={<Results />} />
           </Routes>
         </main>
+
+        <footer className="bg-black p-4">
+          <div className="text-center text-white text-sm">
+            Gordon Research Conference
+          </div>
+        </footer>
       </div>
     </Router>
   );
