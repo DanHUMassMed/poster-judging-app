@@ -136,13 +136,12 @@ def get_scores():
         # Concatenate all DataFrames into a single DataFrame
         scores_df = pd.concat(df_list, ignore_index=True)
 
-        # Save the consolidated DataFrame to the main scores.csv file, overwriting it
-        scores_df.to_csv(output_file_path, index=False)
-        logger.info(f"Successfully consolidated scores into {output_file_path}")
-
         # Replace NaN with None for JSON compatibility before returning
         scores_df = scores_df.where(pd.notnull(scores_df), None)
-        scores_df = scores_df.sort_values(by=['Timestamp', 'Poster_Title']).reset_index(drop=True)
+        scores_df = scores_df.sort_values(by=['Poster_Title','Judge']).reset_index(drop=True)
+
+        # Save the consolidated DataFrame to the main scores.csv file, overwriting it
+        scores_df.to_csv(output_file_path, index=False)
         return scores_df.to_dict(orient="records")
 
     except Exception as e:
